@@ -13,6 +13,9 @@ ALTO_PANTALLA // 2 - ALTO_BARRA // 2],ANCHO_BARRA, ALTO_BARRA,[0, VELOCIDAD_BARR
 v_x = randint(V_MIN, V_MAX)
 v_y = randint(V_MIN, V_MAX)
 
+while v_x == 0:
+    v_x = randint(V_MIN, V_MAX)
+
 pelota = Circulo.Circulo([ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2], RADIO_PELOTA, [v_x, v_y])
 
 puntos_P1 = 0
@@ -55,9 +58,9 @@ def teclasP2(teclas):
     elif teclas[pygame.K_s]:
         direction = 'DOWN'
     elif teclas[pygame.K_d]:
-        direction = 'LEFT'
-    elif teclas[pygame.K_a]:
         direction = 'RIGHT'
+    elif teclas[pygame.K_a]:
+        direction = 'LEFT'
     return direction
 
 
@@ -67,6 +70,10 @@ def reset(r_izd, r_dch, cir):
 
     v_x = randint(V_MIN, V_MAX)
     v_y = randint(V_MIN, V_MAX)
+
+    while v_x == 0:
+        v_x = randint(V_MIN, V_MAX)
+
     cir.pos[0] = ANCHO_PANTALLA // 2
     cir.pos[1] = ALTO_PANTALLA // 2
     cir.velocidad[0] = v_x
@@ -104,8 +111,8 @@ while True:
         direction = teclasP1(teclas)
         direction2 = teclasP2(teclas)
 
-        rec_izd.MoverFlechas(direction2)
-        rec_dch.MoverFlechas(direction)
+        rec_izd.MoverFlechas(direction2, ANCHO_PANTALLA, ALTO_PANTALLA)
+        rec_dch.MoverFlechas(direction, ANCHO_PANTALLA, ALTO_PANTALLA)
 
         pelota.RebotaBordes(ANCHO_PANTALLA, ALTO_PANTALLA)
         pelota.Mover()

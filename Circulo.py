@@ -10,7 +10,7 @@ class Circulo:
         self.pos[0] += self.velocidad[0]
         self.pos[1] += self.velocidad[1]
         self.velocidad[0] *= ACELERACION
-    
+
     def RebotaBordes(self, ancho, alto):
         if self.pos[1] > (alto - self.radio) or self.pos[1] < (self.radio):
             self.velocidad[1] *= -1
