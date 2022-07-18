@@ -1,2 +1,2 @@
-#mi_pong_py
+# mi_pong_py
 Una simple implementacion del mitico juego pong en python usando pygame
