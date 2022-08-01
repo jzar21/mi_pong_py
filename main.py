@@ -26,5 +26,7 @@ if __name__ == '__main__':
                         sys.exit()
 
         mi_juego.Actualizar(pantalla)
-        pygame.display.update()
+        fps = control_fps.get_fps()
+        Graficos.mostrarFps(pantalla, fps)
         control_fps.tick(FPS)
+        pygame.display.update()

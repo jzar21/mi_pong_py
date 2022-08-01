@@ -24,3 +24,10 @@ def pintarRectangulo(pantalla, rec):
                     rec.ancho,rec.alto))
 def pintarCirculo(pantalla, cir):
     pygame.draw.circle(pantalla, BLANCO, cir.pos, cir.radio)
+
+def mostrarFps(pantalla, fps):
+    fuente = pygame.font.SysFont('consolas', 20)
+    texto = fuente.render(str(int(fps)) + ' FPS', True, BLANCO)
+    rectangulo = texto.get_rect()
+    rectangulo.topleft = (10, 10)
+    pantalla.blit(texto, rectangulo)
