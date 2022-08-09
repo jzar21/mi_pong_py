@@ -1,7 +1,7 @@
 from parametros import *
 import pygame, sys, Game, Graficos, Control
 
-if __name__ == '__main__':
+def main():
     mi_juego = Game.Game()
     errores = pygame.init()
 
@@ -30,3 +30,7 @@ if __name__ == '__main__':
         Graficos.mostrarFps(pantalla, fps)
         control_fps.tick(FPS)
         pygame.display.update()
+
+
+if __name__ == '__main__':
+    main()
